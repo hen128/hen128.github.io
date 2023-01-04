@@ -1,4 +1,5 @@
 module.exports = {
+  lang: 'zh-CN',
   title: "hen's blog",
   description: "...",
   port: "8080",
@@ -9,13 +10,22 @@ module.exports = {
   markdown: {
     lineNumbers: true,
   },
-  plugins: ['@vuepress/last-updated','@vuepress/back-to-top'],
+  plugins: [[
+    '@vuepress/last-updated',
+    {
+      transformer: (timestamp, lang) => {
+        const moment = require('moment')
+        moment.locale(lang)
+        return moment(timestamp).fromNow('LLLL')
+      }
+    }
+  ], '@vuepress/back-to-top', '@vuepress/nprogress'],
   themeConfig: {
     nav: require("./nav.js"),// 导航栏
     sidebar: require("./sidebar.js"), // 侧边栏
     collapsable: true,
     // sidebarDepth: 2,
-    lastUpdated: "Last Updated",
+    lastUpdated: "上次更新",
     searchMaxSuggestoins: 10,
     serviceWorker: {
       updatePopup: {

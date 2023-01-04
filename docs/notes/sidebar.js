@@ -48,12 +48,12 @@ module.exports = [
     ],
   },
   {
-    title: "另外",
+    title: "更多",
     collapsable: true,
     children: [
-      { title: "开发方法集合", path: "/notes/other/util" },
-      { title: "Java", path: "/notes/other/Java" },
-      { title: "Linux", path: "/notes/other/Linux" },
+      { title: "开发方法集合", path: "/notes/more/util" },
+      { title: "Java", path: "/notes/more/Java" },
+      { title: "Linux", path: "/notes/more/Linux" },
     ],
   },
 ]
