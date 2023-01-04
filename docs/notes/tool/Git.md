@@ -3,8 +3,12 @@
 ## 命令
 
 ```sh
-git push -f # 强制推送
-git push -f https://gitee.com/<USERNAME>/<USERNAME>.git master # 强制推送到仓库
+# 强制推送
+git push -f 
+# 强制推送到仓库
+git push -f https://gitee.com/<USERNAME>/<USERNAME>.git master 
+# 推送到分支
+git push -f https://gitee.com/<USERNAME>/<USERNAME>.git master:<分支名>
 ```
 
 
