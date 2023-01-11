@@ -40,7 +40,7 @@ module.exports = [
     collapsable: true,
     children: [
       { title: "Git", path: "/notes/tool/Git" },
-      { title: "VsCode", path: "/notes/tool/VsCode" },
+      { title: "VSCode", path: "/notes/tool/VSCode" },
       { title: "Typora设置图床", path: "/notes/tool/Typora设置图床" },
       { title: "Nginx", path: "/notes/tool/Nginx" },
       { title: "PM2", path: "/notes/tool/PM2" },
