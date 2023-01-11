@@ -1,4 +1,4 @@
 node_modules
 .temp
 picgo
-docs/.vuepress/dist
+dist
