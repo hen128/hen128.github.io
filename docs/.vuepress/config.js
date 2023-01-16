@@ -1,6 +1,6 @@
 module.exports = {
   lang: 'zh-CN',
-  title: "hen's blog",
+  title: "再往后", // hen's blog
   description: "...",
   port: "8080",
   head: require("./config/headConfig.js"),

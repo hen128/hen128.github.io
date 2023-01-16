@@ -8,7 +8,7 @@ module.exports = [
       { title: "Vue", path: "/notes/vue/Vue" },
       { title: "Vue3", path: "/notes/vue/Vue3" },
       { title: "VuePress", path: "/notes/vue/VuePress" },
-      { title: "Nuxt", path: "/notes/vue/Nuxt" },
+      { title: "Nuxt3", path: "/notes/vue/Nuxt3" },
     ],
   },
   {
