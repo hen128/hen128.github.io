@@ -1,7 +1,5 @@
 # Nginx
 
-![image-20221230194337666](https://gitee.com/hen128/storage/raw/master/typora/2022-12-30%20194339.png)
-
 ## 301跳转
 
 ```language

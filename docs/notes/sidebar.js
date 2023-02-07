@@ -52,9 +52,9 @@ module.exports = [
     title: "更多",
     collapsable: true,
     children: [
-      { title: "开发方法集合", path: "/notes/more/util" },
-      { title: "Java", path: "/notes/more/Java" },
-      { title: "Linux", path: "/notes/more/Linux" },
+      { title: "开发方法集合", path: "/notes/z-more/util" },
+      { title: "Java", path: "/notes/z-more/Java" },
+      { title: "Linux", path: "/notes/z-more/Linux" },
     ],
   },
 ]

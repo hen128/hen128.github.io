@@ -14,6 +14,8 @@ nvm全英文也叫node.js version management，是一个nodejs的版本管理工
 
 安装前需卸载之前的**node**
 
+注意：安装目录不能有空格和中文，否则会出现，切换node报错 exit status 1: �ܾ����ʡ�
+
 ## nvm命令提示
 
 - `nvm arch`：显示node是运行在32位还是64位。

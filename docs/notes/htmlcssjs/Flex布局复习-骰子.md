@@ -1,8 +1,11 @@
 # Flex布局复习-骰子
 
+参考：[阮一峰：Flex 布局教程：实例篇]: http://www.ruanyifeng.com/blog/2015/07/flex-examples.html
+
+
 ## 单项目
 
-![image-20221227160556106](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160557.png)
+![image-20230207091126294](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091137.png)
 
 ```css
 .box {
@@ -11,7 +14,7 @@
 }
 ```
 
-![image-20221227160615314](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160616.png)
+![image-20230207091205578](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091207.png)
 
 ```
 .box {
@@ -21,7 +24,7 @@
 }
 ```
 
-![image-20221227160633357](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160635.png)
+![image-20230207091244554](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091246.png)
 
 ```
 .box {
@@ -33,7 +36,7 @@
 
 ## 双项目
 
-![image-20221227160643095](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160644.png)
+![image-20230207091251592](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091253.png)
 
 ```
 .box {
@@ -43,7 +46,7 @@
 }
 ```
 
-![image-20221227160654321](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160655.png)
+![image-20230207091450665](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091452.png)
 
 ```
 .box {
@@ -54,7 +57,7 @@
 }
 ```
 
-![image-20221227160709861](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160711.png)
+![image-20230207091259341](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091300.png)
 
 ```
 .box {
@@ -65,7 +68,7 @@
 }
 ```
 
-![image-20221227160722899](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160724.png)
+![image-20230207091310941](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091312.png)
 
 ```
 .box {
@@ -77,7 +80,8 @@
 }
 ```
 
-![image-20221225152526849](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20161351.png)
+![image-20230207091321002](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091322.png)
+
 ```
 .box {
   display: flex;
@@ -91,7 +95,7 @@
 
 ## 三项目
 
-![image-20221227160732386](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160734.png)
+![image-20230207091327502](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091329.png)
 
 ```
 .box {
@@ -109,7 +113,7 @@
 
 ## 四项目
 
-![image-20221227160746396](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160748.png)
+![image-20230207091333534](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091335.png)
 
 ```
 .box {
@@ -120,7 +124,7 @@
 }
 ```
 
-![image-20221227160802436](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160804.png)
+![image-20230207091339473](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091341.png)
 
 ```
 <div class="box">
@@ -151,7 +155,7 @@
 
 ## 六项目
 
-![image-20221227160813086](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160814.png)
+![image-20230207091346286](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091347.png)
 
 ```
 .box {
@@ -161,7 +165,7 @@
 }
 ```
 
-![image-20221227160823300](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160825.png)
+![image-20230207091352218](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091353.png)
 
 ```
 .box {
@@ -172,7 +176,7 @@
 }
 ```
 
-![image-20221227160840128](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160841.png)
+![image-20230207091358036](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091359.png)
 
 ```
 <div class="box">
@@ -213,7 +217,7 @@
 
 ## 九项目
 
-![image-20221227160851245](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20160852.png)
+![image-20230207091403506](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091405.png)
 
 ```
 .box {
@@ -222,7 +226,7 @@
 }
 ```
 
-## html
+## 预览
 
 ```
 <!DOCTYPE html>
@@ -523,8 +527,4 @@
 
 </html>
 ```
-
-# 参考
-
-[阮一峰：Flex 布局教程：实例篇]: http://www.ruanyifeng.com/blog/2015/07/flex-examples.html
 

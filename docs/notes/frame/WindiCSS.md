@@ -1,4 +1,4 @@
-# Windi CSS
+# WindiCSS
 
 ![image-20221230170609219](https://gitee.com/hen128/storage/raw/master/typora/2022-12-30%20170611.png)
 
@@ -6,7 +6,7 @@
 
 官网：https://windicss.org/
 
-带有中文翻译的旧版本：https://www.tailwindcss.cn
+中文官网：https://cn.windicss.org/
 
 ## 配置
 ### Vite

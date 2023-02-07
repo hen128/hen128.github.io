@@ -1,6 +1,6 @@
 # PM2
 
-![image-20221230201930777](https://gitee.com/hen128/storage/raw/master/typora/2022-12-30%20201932.png)
+![image-20230207092044016](https://cloud.zengweihao.cn/typora/2023-02-07/20230207092045.png)
 
 > pm2是一个进程管理工具,可以用它来管理你的node进程，并查看node进程的状态，当然也支持性能监控，进程守护，负载均衡等功能
 

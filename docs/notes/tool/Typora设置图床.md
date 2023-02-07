@@ -1,4 +1,10 @@
 # Typora设置图床
+
+> 参考：
+>
+> https://blog.csdn.net/xunrenbuyu/article/details/121121611
+> https://blog.csdn.net/qq_44760609/article/details/122265353
+
 ## 依赖
 
 1. PicGo-Core：用于文件上传至图床
@@ -59,7 +65,7 @@ picgo install super-prefix
 
 1. 按照下图进行设置，上传服务选择`Custom Command`，命令为`picgo upload`
 
-![image-20221227155633835](https://gitee.com/hen128/storage/raw/master/typora/2022-12-27%20155635.png)
+![image-20230207092102187](https://cloud.zengweihao.cn/typora/2023-02-07/20230207092103.png)
 
 ## 七牛云
 
@@ -118,8 +124,5 @@ picgo install smms-user
 }
 ```
 
-## 参考
 
-https://blog.csdn.net/xunrenbuyu/article/details/121121611
-https://blog.csdn.net/qq_44760609/article/details/122265353
 
