@@ -2,7 +2,7 @@
 
 ## 基础
 
-`split() ` 把一个字符串分割成字符串数组
+ <transition name="el-zoom-in-center" appear>    xxx</transition>vue
 
 ```
 var str="How are you doing today?";
