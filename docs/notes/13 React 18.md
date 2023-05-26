@@ -27,6 +27,10 @@
 
 # 基础
 
+## Hook
+
+### useState
+
 ## 事件
 
 阻止默认事件
@@ -308,6 +312,28 @@ export default function ContactList({
 
 疑问：插槽的使用？
 
+
+
+## 嵌套html
+
+使用`dangerouslySetInnerHTML`
+
+```html
+<p dangerouslySetInnerHTML={{ __html: record.content }}></p>
+```
+
+## 文本`\n`解析换行
+
+使用该样式
+
+```css
+.title{
+   white-space: pre-wrap;
+}
+```
+
+对应Windi CSS中的`whitespace-pre-wrap`
+
 # Vite(脚手架的使用)
 
 ## 安装
@@ -406,6 +432,23 @@ const App = () => {
 
 export default App;
 ```
+
+## Table  render绑定事件 
+
+```jsx
+  const columns = [
+    {
+    title: '审核',
+    render: (_, record) => (
+      <Button onClick={() => { checkNote(record.id, 2) }}>已通过</Button>
+    ),
+  },
+  ]
+  
+  const checkNote = ()=>{...}
+```
+
+
 
 # Windi CSS引入(Vite)
 

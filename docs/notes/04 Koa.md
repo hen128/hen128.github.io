@@ -1,7 +1,5 @@
 # Koa
 
-![image-20230207091943314](https://cloud.zengweihao.cn/typora/2023-02-07/20230207091945.png)
-
 # 常规
 
 ## 请求参数

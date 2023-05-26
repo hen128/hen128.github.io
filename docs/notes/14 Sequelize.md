@@ -1,8 +1,45 @@
 # Sequelize
 
-![image-20221231104031587](https://gitee.com/hen128/storage/raw/master/typora/2022-12-31%20104033.png)
-
 [官网]: https://www.sequelize.com.cn/
+
+## 关联 `include`
+
+```js
+// 建立关联
+Profile.belongsTo(User)
+
+User.findAndCountAll({
+  include: [
+    { model: Profile, where: { active: true } attributes:[]}
+  ],
+})
+```
+
+嵌套关联
+
+```js
+include: [{
+    model: DB.note,
+    include:[
+        {
+            model: DB.user,
+            attributes: ['id', 'name', 'avatar']
+        }
+    ]
+}]
+```
+
+
+
+## 属性 `attributes`
+
+排除属性
+
+```
+attributes: { exclude: ['password'] }
+```
+
+
 
 ## 插件：sequelize-auto 
 
