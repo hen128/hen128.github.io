@@ -1,36 +1,5 @@
 # React 18
 
-------
-
-
-> git规范：
->
-> ```
-> feat - 新功能 feature
-> fix - 修复 bug
-> docs - 文档注释
-> style - 代码格式(不影响代码运行的变动)
-> refactor - 重构、优化(既不增加新功能，也不是修复bug)
-> perf - 性能优化
-> test - 增加测试
-> chore - 构建过程或辅助工具的变动
-> revert - 回退
-> build - 打包
-> ```
->
-> 代办：
->
-> 小案例：
-> 列表过滤：https://zh-hans.reactjs.org/learn/sharing-state-between-components
-> 相同位置的相同组件会使得 state 被保留下来 ：https://zh-hans.reactjs.org/learn/preserving-and-resetting-state
-> useRef练习：https://zh-hans.reactjs.org/learn/referencing-values-with-refs
-
-# 基础
-
-## Hook
-
-### useState
-
 ## 事件
 
 阻止默认事件
@@ -45,9 +14,11 @@ event.preventDefault()
 event.stopPropagation()
 ```
 
-## 样式 className和 LineStyle
+## CSS
 
-### 写法一
+### 样式 className和 LineStyle
+
+写法一
 
 ```jsx
 编写：
@@ -64,7 +35,7 @@ import './style.css';
 <div className="sty1">看背景颜色和文字颜色</div>
 ```
 
-### 写法二
+写法二
 
 ```jsx
 导入：
@@ -74,7 +45,7 @@ import StyleOther from  './styleother.css';
 <div className={StyleOther.sty2}>看背景颜色和文字颜色</div>
 ```
 
-### 写法三
+写法三
 
 ```jsx
 在JSX中定义：
@@ -108,9 +79,47 @@ const bgStyle = {
 <div style={{ backgroundImage: 'url(' + bgPic + ')' }}></div>
 ```
 
+## 条件渲染
+
+渲染组件：
+
+```jsx
+<div>
+  {isLoggedIn ? (
+    <AdminPanel />
+  ) : (
+    <LoginForm />
+  )}
+</div>
+```
+
+或使用`&&`
+
+```jsx
+<div>
+  {isLoggedIn && <AdminPanel />}
+</div>
+```
+
+## 渲染列表
+
+```jsx
+const listItems = products.map(product =>
+  <li key={product.id}>
+    {product.title}
+  </li>
+);
+
+return (
+  <ul>{listItems}</ul>
+);
+```
 
 
-## 路由守卫(react-router-dom)
+
+## 路由
+
+### 路由守卫(react-router-dom)
 
 `App.tsx`
 
@@ -157,7 +166,7 @@ export default App
 
 
 
-## 嵌套路由(react-router-dom)
+### 嵌套路由(react-router-dom)
 
 ```tsx
 import React, { lazy } from "react"
@@ -214,10 +223,10 @@ export default routes
 
 
 
-## 路由传值
+### 路由传值
 
 ```
-暂无处理！
+暂无
 ```
 
 
@@ -322,21 +331,141 @@ export default function ContactList({
 <p dangerouslySetInnerHTML={{ __html: record.content }}></p>
 ```
 
-## 文本`\n`解析换行
+## useState
 
-使用该样式
+### 对象
 
-```css
-.title{
-   white-space: pre-wrap;
+State 可以保存任何类型的 JavaScript 值，包括对象。但是你不应该直接改变你在 React 状态下持有的对象。相反，当您想要更新一个对象时，您需要创建一个新对象（或复制一个现有对象），然后设置状态以使用该副本。
+
+```jsx
+const [position, setPosition] = useState({ x: 0, y: 0 })
+
+// 不推荐
+position.x = 5;
+
+// 要替换而不是改变
+ setPosition({
+     x: e.clientX,
+     y: e.clientY
+})
+```
+
+使用解构
+
+```jsx
+ const [player, setPlayer] = useState({
+    firstName: 'Ranjani',
+    lastName: 'Shettar',
+    score: 10,
+  });
+
+  function handleFirstNameChange(e) {
+    setPlayer({
+      ...player,
+      firstName: e.target.value,
+    });
+  }
+```
+
+### 数组
+
+https://react.docschina.org/learn/updating-arrays-in-state
+
+数组是另外一种可以存储在 state 中的 JavaScript 对象，它虽然是可变的，但是却应该被视为不可变。同对象一样，当你想要更新存储于 state 中的数组时，你需要创建一个新的数组（或者创建一份已有数组的拷贝值），并使用新数组设置 state。
+
+在 JavaScript 中，数组只是另一种对象。[同对象一样](https://react.docschina.org/learn/updating-objects-in-state)，**你需要将 React state 中的数组视为只读的**。这意味着你不应该使用类似于 `arr[0] = 'bird'` 这样的方式来重新分配数组中的元素，也不应该使用会直接修改原始数组的方法，例如 `push()` 和 `pop()`。
+
+相反，每次要更新一个数组时，你需要把一个**新**的数组传入 state 的 setting 方法中。为此，你可以通过使用像 `filter()` 和 `map()` 这样不会直接修改原始值的方法，从原始数组生成一个新的数组。然后你就可以将 state 设置为这个新生成的数组。
+
+下面是常见数组操作的参考表。当你操作 React state 中的数组时，你需要避免使用左列的方法，而首选右列的方法：
+
+|          | 避免使用 (会改变原始数组)     | 推荐使用 (会返回一个新数组）                                 |
+| -------- | ----------------------------- | ------------------------------------------------------------ |
+| 添加元素 | `push`，`unshift`             | `concat`，`[...arr]` 展开语法（[例子](https://react.docschina.org/learn/updating-arrays-in-state#adding-to-an-array)） |
+| 删除元素 | `pop`，`shift`，`splice`      | `filter`，`slice`（[例子](https://react.docschina.org/learn/updating-arrays-in-state#removing-from-an-array)） |
+| 替换元素 | `splice`，`arr[i] = ...` 赋值 | `map`（[例子](https://react.docschina.org/learn/updating-arrays-in-state#replacing-items-in-an-array)） |
+| 排序     | `reverse`，`sort`             | 先将数组复制一份（[例子](https://react.docschina.org/learn/updating-arrays-in-state#making-other-changes-to-an-array)） |
+
+## useRef
+
+### 引用值
+
+https://zh-hans.react.dev/learn/referencing-values-with-refs
+
+React 会在每次重新渲染之间保留 ref。但是，设置 state 会重新渲染组件，更改 ref 不会！
+
+| ref                                                     | state                                                        |
+| ------------------------------------------------------- | ------------------------------------------------------------ |
+| `useRef(initialValue)`返回 `{ current: initialValue }`  | `useState(initialValue)` 返回 state 变量的当前值和一个 state 设置函数 ( `[value, setValue]`) |
+| 更改时不会触发重新渲染                                  | 更改时触发重新渲染。                                         |
+| 可变 —— 你可以在渲染过程之外修改和更新 `current` 的值。 | “不可变” —— 你必须使用 state 设置函数来修改 state 变量，从而排队重新渲染。 |
+| 你不应在渲染期间读取（或写入） `current` 值。           | 你可以随时读取 state。但是，每次渲染都有自己不变的 state [快照](https://zh-hans.react.dev/learn/state-as-a-snapshot)。 |
+
+### 操作DOM
+
+https://zh-hans.react.dev/learn/manipulating-the-dom-with-refs
+
+```jsx
+import { useRef } from 'react';
+
+export default function Form() {
+  const inputRef = useRef(null);
+
+  function handleClick() {
+    inputRef.current.focus();
+  }
+
+  return (
+    <>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>
+        聚焦输入框
+      </button>
+    </>
+  );
 }
 ```
 
-对应Windi CSS中的`whitespace-pre-wrap`
+## useEffect 
 
-# Vite(脚手架的使用)
+https://zh-hans.react.dev/learn/synchronizing-with-effects
 
-## 安装
+*Effects*让你在渲染后运行一些代码。
+
+在组件的顶层调用它，并将一些代码放入 Effect 中：
+
+```jsx
+import { useEffect } from 'react';
+
+function MyComponent() {
+  useEffect(() => {
+    // Code here will run after *every* render
+  });
+  return <div />;
+}
+```
+
+## useContext
+
+https://zh-hans.react.dev/reference/react/useContext
+
+相当于上下文的作用。
+
+## useMemo
+
+https://zh-hans.react.dev/reference/react/useMemo
+
+相当于Vue中的computed
+
+## useReducer 
+
+https://zh-hans.react.dev/reference/react/useReducer
+
+状态管理。
+
+## Vite(脚手架的使用)
+
+**安装**
 
 生成脚手架
 
@@ -366,9 +495,7 @@ npm init vite
 }
 ```
 
-
-
-## 配置项目路径别名
+**配置项目路径别名**
 
 目前ts对@指向src目录的提示是不支持的，vite默认也是不支持的。 所以需要手动配置@符号的指向 在vite.config.ts中添加配置：
 
@@ -408,7 +535,7 @@ export default defineConfig({
 }
 ```
 
-# Ant Design 5.0引入
+## Ant Design 5.0引入
 
 新特性：默认支持按需加载
 
@@ -450,7 +577,7 @@ export default App;
 
 
 
-# Windi CSS引入(Vite)
+## Windi CSS引入(Vite)
 
 指导：https://windicss.org/integrations/vite.html
 
