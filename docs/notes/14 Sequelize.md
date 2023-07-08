@@ -43,16 +43,19 @@ attributes: { exclude: ['password'] }
 
 ## 插件：sequelize-auto 
 
-```js
-## 安装
+https://github.com/sequelize/sequelize-auto
+
+安装
+
+```
 npm i sequelize-auto -D
+```
 
-## package.json 添加启动项 npm run models
-"scripts": {
-  "models": "node xxx/sequelize-auto.js"
-}
 
-## sequelize-auto.js
+`sequelize-auto.js`
+
+```js
+
 const SequelizeAuto = require('sequelize-auto')
 const { host, user, password, database, dialect, port } = require('...')
 
@@ -70,16 +73,39 @@ const auto = new SequelizeAuto(database, user, password, options)
 auto.run(err => {
   if (err) throw err
 })
+```
 
-## DB.js
+`package.json`添加启动项 npm run models
+
+```json
+"scripts": {
+  "models": "node sequelize-auto.js"
+}
+```
+
+引用 `util/DB.js`
+
+```
 const Sequelize = require('sequelize')
 const initModels = require('../models/init-models')
 const { host, user, password, database, dialect } = require('...')
 const sequelize = new Sequelize(database, user, password, { host, dialect, define: { timestamps: false } })
 
 module.exports = initModels(sequelize)
+```
 
-## 使用
+使用
+
+```js
 const DB = require('../utils/DB')
 const userInfo = await DB.User.findOne({ isDelete: 0 })
 ```
+
+另，命令行方式 `package.json`
+
+```json
+"scripts": {
+    "model": "sequelize-auto -l ts -h localhost -d redbook -u root -x 123456 -p 3306 --dialect mysql -o server/model"
+},
+```
+

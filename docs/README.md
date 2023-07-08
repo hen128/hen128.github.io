@@ -1,6 +1,7 @@
 ---
 home: true
-heroText: Hi，别来无恙！
+heroText: Hi👋，I am Hen Tsang
+description: 我是一名前端开发者
 actionText: 博客笔记 →
 actionLink: /notes/
 features:

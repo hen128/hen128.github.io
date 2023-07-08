@@ -30,3 +30,12 @@ https://blog.csdn.net/qq_37939251/article/details/105808682
 ```
 
 新建好之后，我们再次回到VSCode中的`Demo1.vue`页面，直接输入 `nuxt` 回车后，就会生成一段代码了。
+
+## Tab键自动生成闭合标签
+
+在`setting.json`中添加
+
+```
+"emmet.triggerExpansionOnTab": true
+```
+

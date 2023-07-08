@@ -11,3 +11,12 @@
 ```
 
 对应Windi CSS中的`whitespace-pre-wrap`
+
+## calc
+
+```css
+.el-menu {
+    height: calc(100vh - 60px);
+}
+```
+
