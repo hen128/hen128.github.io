@@ -1,4 +1,4 @@
-# 基于Koa+Vue2+MySQL的博客系统
+# 基于Koa.js+Vue2+MySQL的博客系统
 
 地址🧭 [https://gitee.com/hen128/blog](https://gitee.com/hen128/blog)
 
