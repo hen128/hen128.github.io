@@ -1,4 +1,4 @@
-# Sequelize
+# Sequelize的笔记
 
 [官网]: https://www.sequelize.com.cn/
 

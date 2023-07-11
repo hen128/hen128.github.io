@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript的笔记
 
 ## 基础
 

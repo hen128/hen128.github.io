@@ -1,10 +1,6 @@
-# Koa+Vue2+MySQL的博客系统
+# 基于Koa+Vue2+MySQL的博客系统
 
-> 关键词：Md 文章，Vue，Koa，mysql
->
-> 作者邮箱：hen128@qq.com
->
-> 持续更新~
+关键词：Md 文章，Vue，Koa，mysql
 
 ## 组成
 

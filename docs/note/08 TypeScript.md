@@ -1,4 +1,4 @@
-# TypeScript
+# TypeScript的笔记
 
 ## 安装
 

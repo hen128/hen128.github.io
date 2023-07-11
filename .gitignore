@@ -1,4 +1,10 @@
 node_modules
 .temp
+.DS_Store
+
+# picgo 配置文件
 picgo
 dist
+
+不上传
+temp

@@ -10,7 +10,7 @@ module.exports = {
   plugins: require("./config/pluginsConfig.js"),
   themeConfig: {
     nav: require("./config/navConfig.js"),// 导航栏
-    sidebar: require("./config/sidebarConfig.js"), // 侧边栏
+    // sidebar: require("./config/sidebarConfig.js"), // 侧边栏
     collapsable: true,
     // sidebarDepth: 2,
     lastUpdated: "上次更新",

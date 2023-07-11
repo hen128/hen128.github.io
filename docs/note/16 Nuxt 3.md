@@ -1,4 +1,4 @@
-# Nuxt3
+# Nuxt 3的笔记
 
 [Nuxt3中文官网](https://nuxt.com.cn)
 

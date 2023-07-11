@@ -4,34 +4,34 @@ sidebar: auto
 
 # 关于
 
-## 我
+## 自我介绍
 
-😊大家好，我是Hen Tsang，简称hen，现在是一名大三在校生（软件工程），我的目标是做一个深耕JavaScript的程序员
+👋大家好，我是Hen Tsang，简称hen，一名大四在校生（软件工程）🧩，爱好码字⌨️和折腾一些有趣的玩意儿🤣。主要方向是JavaScript及其周边 🔧。
 
 - 🧭方向： 前端工程师
+
 - 🎈坐标： 广东佛山
+
 - 🏫学校： 韩山师范学院
 
+- 🧑🏻‍💻代码仓库：[https://gitee.com/hen128](https://gitee.com/hen128)
+
+<img src="https://cloud.zengweihao.cn/typora/2023-07-11/20230711101340.png" alt="image-20230711101340505" style="zoom:150%;" />
+
 ## 我的技能
-- Vue 3
-- Nuxt 3
-- React 18
-- Koa
-- Express
-- Tailwind CSS
-- uni-app
+
+- [Vue 3](https://cn.vuejs.org)
+- [Nuxt 3](https://nuxt.com)
+- [React 18](https://react.docschina.org)
+- [Koa](https://koajs.com)
+- [Element-Plus](https://cn.element-plus.org/zh-CN/) & [Ant Design ](https://ant.design/index-cn/)
+- [Tailwind CSS](https://www.tailwindcss.cn)
+- [uni-app](https://uniapp.dcloud.io/quickstart)
 - TypeScript
 - CSS 3
 - MySQL
-- MongoDB
-- git
-
-
-## 爱好
-
-- 探索新奇事物
-- 羽毛球，慢跑
-- 电影：悬疑，科幻...
+- Git
+- Postman & Swagge UI
 - ...
 
 
