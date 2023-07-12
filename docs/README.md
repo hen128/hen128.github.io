@@ -14,5 +14,5 @@ features:
 ---
 
 ::: slot footer
-Copyright © 2022-present [hen](https://gitee.com/hen128) | [粤ICP备2022028775号](https://beian.miit.gov.cn/)
+Copyright © 2022-present [曾伟浩的代码仓库](https://gitee.com/hen128) | [粤ICP备2022028775号](https://beian.miit.gov.cn/) | 本站点托管于[Vercel](https://vercel.com)
 :::

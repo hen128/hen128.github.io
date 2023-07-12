@@ -12,6 +12,9 @@ module.exports = [
         text: '关于', link: "/about/"
     },
     {
+        text: '简历', link: "/curriculum-vitae/"
+    },
+    {
         text: 'Gitee', link: 'https://gitee.com/hen128'
     },
 
