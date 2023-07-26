@@ -16,7 +16,9 @@ sidebar: auto
 
 - 🧑🏻‍💻代码仓库：[https://gitee.com/hen128](https://gitee.com/hen128)
 
-<img src="https://cloud.zengweihao.cn/typora/2023-07-11/20230711101340.png" alt="image-20230711101340505" style="zoom:150%;" />
+![image-20230726160947858](https://cloud.zengweihao.cn/typora/2023-07-26/20230726160948.png)
+
+
 
 ## 我的技能
 
