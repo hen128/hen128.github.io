@@ -14,5 +14,6 @@ module.exports = [
   ['@vuepress/nprogress'],
   ["vuepress-plugin-auto-sidebar", {
     // options
+    sidebarDepth: 2
   }]
 ]
