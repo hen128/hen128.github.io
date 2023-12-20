@@ -100,6 +100,55 @@ uni.$emit('login', {
 
 缺点：不支持微信小程序
 
+## 微信小程序
+
+### 获取昵称
+
+```
+<input type="nickname" v-model="user.nickname" @change="getNickname" class="weui-input" placeholder="请输入昵称"/>
+
+getNickname(e){
+   console.log(e)
+   this.user.nickname = e.detail.value
+}
+```
+
+### 获取头像
+
+```
+<button
+class="btn-style"
+open-type="chooseAvatar"
+@chooseavatar="getUserImg"
+> 获取头像
+</button>
+
+getUserImg(res) {
+console.log("获取用户头像:", res.detail.avatarUrl);
+},
+```
+
+### 获取手机号
+
+后端那边需处理
+
+```
+<button
+type="default"
+open-type="getPhoneNumber"
+@getphonenumber="decryptPhoneNumber"
+>
+获取手机号
+</button>
+
+decryptPhoneNumber(e) {
+const { code } = e.detail;
+console.log(code);
+},
+```
+
+
+
 ## 扩展组件
 
 ### [uni-sass辅助样式](https://uniapp.dcloud.net.cn/component/uniui/uni-sass.html)
