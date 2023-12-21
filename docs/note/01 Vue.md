@@ -1,4 +1,4 @@
-# Vue的笔记
+# Vue 2
 
 ## 解决重复点击相同导航报错
 
@@ -190,11 +190,7 @@ onMounted(() => {
 ::v-deep .class{...}
 ```
 
-## 组件通讯
-
-
-
-# Vue3
+# Vue 3
 
 ## watch监听
 
@@ -279,3 +275,23 @@ axios.interceptors.response.use((response: AxiosResponse<any>) => {
 
 export default axios;
 ```
+
+# Vue-Router
+
+## 分类
+
+- 全局路由守卫
+
+  - beforeEach 前置路由，常用于登录校验。
+  - beforeResolve 解析守卫，在 beforeEach 和 组件内beforeRouteEnter 之后，afterEach之前调用。
+  - afterEach 后置钩子，
+
+- 路由独享守卫
+
+  beforeEnter
+
+- 组件守卫
+
+  - beforeRouteEnter
+  - beforeRouteUpdate
+  - beforeRouteLeave

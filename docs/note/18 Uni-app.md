@@ -117,9 +117,9 @@ getNickname(e){
 
 ```
 <button
-class="btn-style"
-open-type="chooseAvatar"
-@chooseavatar="getUserImg"
+    class="btn-style"
+    open-type="chooseAvatar"
+    @chooseavatar="getUserImg"
 > 获取头像
 </button>
 
