@@ -1,8 +1,99 @@
-# JavaScript的笔记
+# JavaScript
+
+## 数组
+
+### 数组去重
+
+1. 通过返回原数组filter过滤出首次出现item，从而获得去重后的新数组。
+
+    ```js
+    let arr1 = [1, 2, 4, 4, 2, 5]
+
+    function removeRepeat(arr) {
+      return arr.filter((item, index, array) => array.indexOf(item) === index)
+    }
+
+    console.log(removeRepeat(arr1))
+    ```
+
+2. 通过ES6 Set
+
+   Set中的元素只会出现一次，是唯一的，将原数组存入到Set，然后通过拓展运算符赋值给新数组，得到去重的数组
+   
+   ```
+   let arr2 = [1,2,4,4,2,5]
+   let newArr2 = [...new Set(arr2)]
+console.log(newArr2) 
+   ```
+   
+
+### 扁平化
+
+扁平化就是将多层嵌套的数组转成一层 [1, [2, [3]]]  => [1, 2, 3]
+
+1. 使用数组自带的flat方法
+
+   ```js
+   let arr1 = [1, [2, [3]]]
+   
+   let arr2 = arr1.flat(2)
+   console.log(arr2) // [ 1, 2, 3 ]
+   ```
+
+2. 使用while循环，通过原数组的some方法判断item是否为数组，若为数组则继续循环，循环过程中，解构原数组，并通过concat方法合并赋值
+
+   ```js
+   let arr1 = [1, [2, [3]]]
+   
+   function myFlat(arr){
+       while(arr.some(item=>Array.isArray(item))){
+           arr = [].concat(...arr)
+       }
+       return arr
+   }
+   let arr3 = myFlat(arr1)
+   console.log(arr3) // [ 1, 2, 3 ]
+   ```
+
+   ### 浅拷贝、深拷贝
+
+   - 浅拷贝是指拷贝一层，基本数据拷贝值，引用类型拷贝内存地址。
+     - Object.assign({},obj)
+     - slice()
+     - concat()
+     - 拓展运算符
+
+   - 深拷贝是开辟一个新的栈，对应不同的地址。
+
+     深拷贝可以使用JSON.stringify()实现
+
+     注意：使用JSON.stringify()弊端：
+
+     ```js
+     // 弊端 会忽略undefined、symbol和函数
+     const obj3 = {
+         name: 'A',
+         name1: undefined,
+         name3: function() {},
+         name4:  Symbol('A')
+     }
+     const obj4 = JSON.parse(JSON.stringify(obj3));
+     console.log(obj4); // {name: "A"}
+     ```
+
+     手写深拷贝代码：
+
+     ```
+     
+     ```
+
+     
+
+   
+
+   
 
 ## 基础
-
- <transition name="el-zoom-in-center" appear>    xxx</transition>vue
 
 ```
 var str="How are you doing today?";
