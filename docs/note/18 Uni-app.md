@@ -100,6 +100,20 @@ uni.$emit('login', {
 
 缺点：不支持微信小程序
 
+### 检测导航栏回退事件
+
+**onBackPress**
+
+```vue
+export default {
+	onBackPress(options) {
+		console.log('from:' + options.from)
+	}
+}
+```
+
+
+
 ## 扩展组件
 
 ### [uni-sass辅助样式](https://uniapp.dcloud.net.cn/component/uniui/uni-sass.html)

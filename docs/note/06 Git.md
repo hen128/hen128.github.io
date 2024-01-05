@@ -12,7 +12,78 @@ git push -f https://gitee.com/<USERNAME>/<USERNAME>.git master:<分支名>
 
 # 查看配置信息
 git config --list
+
+# 修改本地分支名称
+git branch -m oldName newName
 ```
+
+## 创建本地分支
+
+```sh
+创建本地分支，然后切换到dev分支
+
+$ git checkout -b dev
+git checkout命令加上-b参数表示创建并切换，相当于以下两条命令：
+
+$ git branch dev
+$ git checkout dev
+```
+
+## 回退
+
+```sh
+# 查看版本号
+git log
+# 回退
+git reset 版本号
+# 再手动修改，push，可采取强制push
+git push -f
+```
+
+## 合并
+
+```sh
+# 切换到目标分支
+git checkout 目标分支
+# 选择需要合并的分支名
+git merge 分支名
+```
+
+## 删除分支
+
+```
+# 删除本地分支
+git branch -d <branch>
+
+-D 为强制删除
+```
+
+### 退出 git log
+
+按下 `q` 键。
+
+### 保存到暂存
+
+```
+git stash
+```
+
+
+
+## 提交规范
+
+**1.按功能模块一次提交多个文件，提交要有注释**，例如执行git commit -m ‘feat：登录校验’
+
+| 类型     | 说明                             |
+| -------- | -------------------------------- |
+| feat     | 添加新功能                       |
+| fix      | 修复bug                          |
+| docs     | 修改文档                         |
+| style    | 修改样式，不影响业务代码         |
+| refactor | 重构                             |
+| perf     | 改进性能的代码更改               |
+| test     | 添加单元测试                     |
+| chore    | 常规改动、构建过程或辅助工具变动 |
 
 ## 配置
 

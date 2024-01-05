@@ -1,19 +1,5 @@
 # Vue的笔记
 
-## 解决重复点击相同导航报错
-
-```js
-、import Vue from 'vue'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
-
-//获取原型对象上的push函数
-const originalPush = VueRouter.prototype.push
-//修改原型对象中的push方法
-VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err)
-}
-```
 
 ## filter管道
 
@@ -194,9 +180,9 @@ onMounted(() => {
 
 
 
-# Vue3
+## 从Vue3过渡
 
-## watch监听
+### watch监听
 
 ```js
 //方法一 监视---监视指定的数据
@@ -228,7 +214,44 @@ watch(
  )
 ```
 
-## axios封装
+### ref、reactive区别
+
+- reactive
+
+	`reactive` 适用于复杂对象或数组，并且在模版中需要通过解构或访问属性来使用。
+
+- ref
+
+	`ref` 适用于包装原始数据类型或单一的值，可以在模版中直接使用，且支持特定属性的监听和直接对象**替换**。
+	
+	```js
+	// 定义
+	const count = ref(0)
+	// 变化
+	count.value = 1
+	```
+	
+
+
+
+## 实践
+
+### 解决重复点击相同导航报错
+
+```js
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+//获取原型对象上的push函数
+const originalPush = VueRouter.prototype.push
+//修改原型对象中的push方法
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+```
+
+### axios封装
 
 
 ```js
@@ -279,3 +302,143 @@ axios.interceptors.response.use((response: AxiosResponse<any>) => {
 
 export default axios;
 ```
+
+### 列表滚动组件
+
+```vue
+<template>
+  <div class="scroll-view" ref="scrollView" @mouseenter="enter" @mouseleave="leave">
+    <slot />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'scrollView',
+  props: {
+    autoPlay: { // 自动滚动
+      type: Boolean,
+      default: () => true
+    }
+  },
+  data() {
+    return {
+    }
+  },
+  mounted() {
+    if(this.autoPlay){
+      this.autoScroll()
+    }
+  },
+  methods: {
+    // 鼠标移入
+    enter() {
+      clearInterval(this.scrollTimer)
+      this.scrollTimer = null
+    },
+    // 鼠标移出
+    leave() {
+      this.autoScroll()
+    },
+    // 自动滚动
+    autoScroll() {
+      // 加个停顿，优化体验感
+      setTimeout(() => {
+        // 防止鼠标多次移出，计时器累加
+        clearInterval(this.scrollTimer)
+        this.scrollTimer = null
+
+        this.scrollTimer = setInterval(() => {
+          // 获取节点
+          const scrollView = this.$refs['scrollView']
+          this.scrollHeight = scrollView.scrollHeight - scrollView.clientHeight
+          // 判断是否到达底部
+          if (scrollView.scrollTop >= this.scrollHeight) {
+            clearInterval(this.scrollTimer)
+            console.log("触底")
+            // 加个停顿，优化体验感
+            setTimeout(() => {
+              // 触底回调
+              this.$emit('scrollEnd')
+            }, 400)
+          } else {
+            scrollView.scrollTop = scrollView.scrollTop + 1
+          }
+        }, 50)
+      }, 400)
+    },
+    // 回到顶部
+    backTop() {
+      const scrollView = this.$refs['scrollView']
+      scrollView.scrollTop = 0
+    },
+    start() {
+      this.autoScroll()
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+.scroll-view {
+  overflow: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #0e0343; // 滑块颜色
+    border-radius: 5px; // 滑块圆角
+  }
+
+  // &::-webkit-scrollbar-thumb:hover {
+  //   background: #091c71;
+  // }
+
+  // &::-webkit-scrollbar-track {
+  // border-radius: 10px; // 轨道圆角
+  // background-color: #1890ff // 轨道颜色
+  // }
+}
+</style>
+```
+
+使用
+
+```vue
+<template>
+  <scroll-view class="cas-sf--inner" :autoPlay="false" @scrollEnd="scrollEnd" ref="scrollView">
+  </scroll-view>
+</template>
+
+<script>
+		...
+		// 调用
+		this.$refs['scrollView'].start()
+<script/>
+```
+
+### vue自定义组件点击无效
+
+原因：vue官方文档，得知click事件作用于组件内部，如果组件内没有写click事件，便会无响应。
+
+方法1
+
+```
+@click.native
+```
+
+方法2
+
+```
+组件内定义：
+@click = '_click'
+
+methods：
+_click(){
+	this.$emit('click')
+}
+```
+
