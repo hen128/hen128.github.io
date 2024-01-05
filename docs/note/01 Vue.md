@@ -1,4 +1,4 @@
-# Vue的笔记
+# Vue 2
 
 
 ## filter管道
@@ -181,6 +181,7 @@ onMounted(() => {
 
 
 ## 从Vue3过渡
+# Vue 3
 
 ### watch监听
 
@@ -442,3 +443,22 @@ _click(){
 }
 ```
 
+# Vue-Router
+
+## 分类
+
+- 全局路由守卫
+
+  - beforeEach 前置路由，常用于登录校验。
+  - beforeResolve 解析守卫，在 beforeEach 和 组件内beforeRouteEnter 之后，afterEach之前调用。
+  - afterEach 后置钩子，
+
+- 路由独享守卫
+
+  beforeEnter
+
+- 组件守卫
+
+  - beforeRouteEnter
+  - beforeRouteUpdate
+  - beforeRouteLeave
