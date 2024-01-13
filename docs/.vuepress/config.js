@@ -1,6 +1,6 @@
 module.exports = {
   lang: 'zh-CN',
-  title: "hen's blog", // hen's blog
+  title: "blog", // 网站名称
   description: "...",
   port: "8080",
   head: require("./config/headConfig.js"),
