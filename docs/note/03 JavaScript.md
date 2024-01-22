@@ -27,6 +27,328 @@ console.log(newArr2)
    ```
    
 
+3. 采用对象访问属性的方法，判断属性值是否存在，如果不存在就添加
+
+   ```js
+   var arr = [{
+      key: '01',
+      value: '乐乐'
+     }, {
+      key: '02',
+      value: '博博'
+     }, {
+      key: '03',
+      value: '淘淘'
+     },{
+      key: '04',
+      value: '哈哈'
+     },{
+      key: '01', // 重复的
+      value: '乐乐'
+     }];
+     // 方法1：利用对象访问属性的方法，判断对象中是否存在key
+     var result = [];
+     var obj = {};
+     for(var i =0; i<arr.length; i++){
+      if(!obj[arr[i].key]){
+        result.push(arr[i]);
+        obj[arr[i].key] = true;
+      }
+     }
+     console.log(result); // [{key: "01", value: "乐乐"},{key: "02", value: "博博"},{key: "03", value: "淘淘"},{key: "04", value: "哈哈"}]
+   ```
+
+4. 采用数组中的reduce方法，遍历数组，也是通过对象访问属性的方法
+
+   ```
+   var arr = [{
+      key: '01',
+      value: '乐乐'
+     }, {
+      key: '02',
+      value: '博博'
+     }, {
+      key: '03',
+      value: '淘淘'
+     },{
+      key: '04',
+      value: '哈哈'
+     },{
+      key: '01', // 重复的
+      value: '乐乐'
+     }];
+     
+   // 利用reduce方法遍历数组,reduce第一个参数是遍历需要执行的函数，第二个参数是item的初始值
+   var obj = {};
+   arr = arr.reduce(function(item, next) {
+   obj[next.key] ? '' : obj[next.key] = true && item.push(next);
+   return item;
+   }, []);
+   console.log(arr); // [{key: "01", value: "乐乐"},{key: "02", value: "博博"},{key: "03", value: "淘淘"},{key: "04", value: "哈哈"}]
+   ```
+
+5. 方法5
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+     <head>
+       <meta charset="UTF-8" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <title>Document</title>
+     </head>
+     <body>
+       <script>
+         let data = [
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "临床营养科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "核医学科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "输血科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "药学科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "病理科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "医学影像科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "一级",
+             textField_lr77un5o: "检验科",
+             textField_lrg23o3l: "医技科室",
+             selectField_lr77un5n_id: "一级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "中医科",
+             textField_lrg23o3l: "其它",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "康复医学科",
+             textField_lrg23o3l: "其它",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "二级",
+             textField_lr77un5o: "重症医学科",
+             textField_lrg23o3l: "其它",
+             selectField_lr77un5n_id: "二级",
+           },
+           {
+             selectField_lr77un5n: "未评级",
+             textField_lr77un5o: "麻醉科",
+             textField_lrg23o3l: "其它",
+             selectField_lr77un5n_id: "未评级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "皮肤性科",
+             textField_lrg23o3l: "其它",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "急诊科",
+             textField_lrg23o3l: "其它",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "一级",
+             textField_lr77un5o: "小儿外科",
+             textField_lrg23o3l: "儿科",
+             selectField_lr77un5n_id: "一级",
+           },
+           {
+             selectField_lr77un5n: "一级",
+             textField_lr77un5o: "小儿内科",
+             textField_lrg23o3l: "儿科",
+             selectField_lr77un5n_id: "一级",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "产科",
+             textField_lrg23o3l: "妇产科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "妇科",
+             textField_lrg23o3l: "妇产科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "乳腺外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "甲状腺外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "一级",
+             textField_lr77un5o: "烧伤整形科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "一级",
+           },
+           {
+             selectField_lr77un5n: "一级",
+             textField_lr77un5o: "神经外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "一级",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "骨科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "胸外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "心脏血管外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "泌尿外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "肝胆外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "胃肠外科",
+             textField_lrg23o3l: "外科",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "二级",
+             textField_lr77un5o: "神经内科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "二级",
+           },
+           {
+             selectField_lr77un5n: "二级",
+             textField_lr77un5o: "风湿免疫科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "二级",
+           },
+           {
+             selectField_lr77un5n: "未评级",
+             textField_lr77un5o: "肾内科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "未评级",
+           },
+           {
+             selectField_lr77un5n: "一级",
+             textField_lr77un5o: "血液内科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "一级",
+           },
+           {
+             selectField_lr77un5n: "二级",
+             textField_lr77un5o: "消化内科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "二级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "内分泌科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "三甲",
+           },
+           {
+             selectField_lr77un5n: "三级",
+             textField_lr77un5o: "心血管内科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "三级",
+           },
+           {
+             selectField_lr77un5n: "三甲",
+             textField_lr77un5o: "呼吸与重症医学科",
+             textField_lrg23o3l: "内科",
+             selectField_lr77un5n_id: "三甲",
+           },
+         ]
+   
+         function didFetch(content) {
+           console.log("data:", data)
+           list = data
+             .filter(
+               (obj, index) =>
+                 data.findIndex(
+                   item => item.textField_lrg23o3l === obj.textField_lrg23o3l
+                 ) === index
+             )
+             .map(v => {
+               return {
+                 label: v.textField_lrg23o3l,
+                 value: v.textField_lrg23o3l,
+                 children: [],
+               }
+             })
+   
+           data.forEach(e => {
+             let listIndex = list.findIndex(
+               item => item.value === e.textField_lrg23o3l
+             )
+             list[listIndex].children.push({
+               label: e.textField_lr77un5o,
+               value: e.textField_lr77un5o,
+             })
+           })
+           console.log("list:", list)
+         }
+   
+         didFetch(data)
+       </script>
+     </body>
+   </html>
+   ```
+
+   
+
 ### 扁平化
 
 扁平化就是将多层嵌套的数组转成一层 [1, [2, [3]]]  => [1, 2, 3]
@@ -124,110 +446,35 @@ let index = ages.findIndex( age => age > 18);
 console.log(index);
 ```
 
-## 数组方法
-
-```
-var str="How are you doing today?";
-var n=str.split(" "); 
-// How,are,you,doing,today? 
-
-string.split(separator,limit)
-separator:可选。字符串或正则表达式，从该参数指定的地方分割 string Object。
-limit:可选。该参数可指定返回的数组的最大长度。如果设置了该参数，返回的子串不会多于这个参数指定的数组。如果没有设置该参数，整个字符串都会被分割，不考虑它的长度。
-
-返回：Array
-```
-
-`slice()` 提取字符串的片断
-
-`splice()` 用于添加或删除数组中的元素
-
-```js
-array.splice(index,howmany,item1,.....,itemX)
-```
-
-`unshift()`向数组的开头添加一个或更多元素，并返回新的长度
-
-```
-var fruits = ["Banana", "Orange", "Apple", "Mango"];
-fruits.unshift("Lemon","Pineapple"); 
-// Lemon,Pineapple,Banana,Orange,Apple,Mango
-```
-
-## 数组去重
-
-```js
-方法一：
-采用对象访问属性的方法，判断属性值是否存在，如果不存在就添加。
-方法二：
-采用数组中的reduce方法，遍历数组，也是通过对象访问属性的方法
-var arr = [{
-   key: '01',
-   value: '乐乐'
-  }, {
-   key: '02',
-   value: '博博'
-  }, {
-   key: '03',
-   value: '淘淘'
-  },{
-   key: '04',
-   value: '哈哈'
-  },{
-   key: '01',
-   value: '乐乐'
-  }];
-  // 方法1：利用对象访问属性的方法，判断对象中是否存在key
-  var result = [];
-  var obj = {};
-  for(var i =0; i<arr.length; i++){
-   if(!obj[arr[i].key]){
-     result.push(arr[i]);
-     obj[arr[i].key] = true;
-   }
-  }
-  console.log(result); // [{key: "01", value: "乐乐"},{key: "02", value: "博博"},{key: "03", value: "淘淘"},{key: "04", value: "哈哈"}]
-
-
-  // 方法2：利用reduce方法遍历数组,reduce第一个参数是遍历需要执行的函数，第二个参数是item的初始值
-  var obj = {};
-  arr = arr.reduce(function(item, next) {
-   obj[next.key] ? '' : obj[next.key] = true && item.push(next);
-   return item;
-  }, []);
-  console.log(arr); // [{key: "01", value: "乐乐"},{key: "02", value: "博博"},{key: "03", value: "淘淘"},{key: "04", value: "哈哈"}]
-
-```
-
 ## encodeURIComponent()函数在url传参中的作用和使用方法
 
 来源：https://cloud.tencent.com/developer/article/1736258
 
-### 为什么使用 `encodeURIComponent()` 
+为什么使用 `encodeURIComponent()` ?
 
-在使用 URL 传参的时候，如果参数中有空格等特殊字符，浏览器可能只会读取到空格面前的内容，导部分致数据丢失。
+在使用 URL 传参的时候，如果参数中有空格等特殊字符，浏览器可能只会读取到空格面前的内容，导致部分数据丢失。
 
 可以使用 `encodeURIComponent()` 方法，将这些特殊字符进行转义，这样就可以正常读取了。
 
-### 定义和用法：
+定义和用法：
 
 `encodeURIComponent()` 函数可把字符串作为 URI 组件进行编码。
 
-#### 语法：
+语法：
 
 ```javascript
 encodeURIComponent(URIstring)
 ```
 
-#### 参数：
+参数：
 
 `URIstring`必需。一个字符串，含有 URI 组件或其他要编码的文本。
 
-#### 返回值：
+返回值：
 
 `URIstring` 的副本，其中的某些字符将被十六进制的转义序列进行替换。
 
-### 注意：
+注意：
 
 1、该方法不会对 ASCII 字母和数字进行编码，也不会对这些 ASCII 标点符号进行编码： - _ . ! ~ * ' ( ) 。
 
@@ -235,7 +482,7 @@ encodeURIComponent(URIstring)
 
 3、请注意 `encodeURIComponent()` 函数 与 `encodeURI()` 函数的区别之处，前者假定它的参数是 URI 的一部分（比如协议、主机名、路径或查询字符串）。因此 `encodeURIComponent()` 函数将转义用于分隔 URI 各个部分的标点符号。
 
-### 应用：
+应用：
 
 如果我们要将一个对象通过 URL 进行传输，可以将对象转成字符串，再用 `encodeURIComponent()` 函数进行转义：
 
