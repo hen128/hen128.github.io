@@ -11,11 +11,11 @@ module.exports = [
     {
         text: '关于', link: "/about/"
     },
+    // {
+    //     text: '简历', link: "/curriculum-vitae/"
+    // },
     {
-        text: '简历', link: "/curriculum-vitae/"
-    },
-    {
-        text: 'Gitee', link: 'https://gitee.com/hen128'
+        text: '码云', link: 'https://gitee.com/hen128'
     },
 
 ]
