@@ -177,6 +177,8 @@ console.log(info.friend?.name)
 
 ![image-20230524145410664](https://cloud.zengweihao.cn/typora/2023-05-24/20230524145412.png)
 
+typescript的?? 和?: 和?.和!.什么意思：https://segmentfault.com/a/1190000038782759
+
 ### 字面量类型
 
 ![image-20230524145522601](https://cloud.zengweihao.cn/typora/2023-05-24/20230524145524.png)
