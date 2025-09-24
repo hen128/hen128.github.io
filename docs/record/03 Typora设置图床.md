@@ -65,7 +65,7 @@ picgo install super-prefix
 
 1. 按照下图进行设置，上传服务选择`Custom Command`，命令为`picgo upload`
 
-![image-20230207092102187](https://cloud.zengweihao.cn/typora/2023-02-07/20230207092103.png)
+![image-20230207092102187](./assets/typora_2023-02-07_20230207092103.png)
 
 ## 七牛云
 

@@ -147,13 +147,13 @@ function printPoint(point:Point){
 
 有时候TypeScript无法获取具体的类型信息，这个我们需要使用类型断言（Type Assertions)
 
-![image-20230524114306664](https://cloud.zengweihao.cn/typora/2023-05-24/20230524114308.png)
+![image-20230524114306664](./assets/typora_2023-05-24_20230524114308.png)
 
 ### 非空类型断言 `！`
 
 当我们确定传入的参数是有值的，这个时候我们可以使用非空类型断言。
 
-![image-20230524114235614](https://cloud.zengweihao.cn/typora/2023-05-24/20230524114249.png)
+![image-20230524114235614](./assets/typora_2023-05-24_20230524114249.png)
 
 ### 可选链 ES11(ES2020)增加的特性
 
@@ -175,23 +175,23 @@ console.log(info.friend?.name)
 
 ### `??` 和 `!!`
 
-![image-20230524145410664](https://cloud.zengweihao.cn/typora/2023-05-24/20230524145412.png)
+![image-20230524145410664](./assets/typora_2023-05-24_20230524145412.png)
 
 typescript的?? 和?: 和?.和!.什么意思：https://segmentfault.com/a/1190000038782759
 
 ### 字面量类型
 
-![image-20230524145522601](https://cloud.zengweihao.cn/typora/2023-05-24/20230524145524.png)
+![image-20230524145522601](./assets/typora_2023-05-24_20230524145524.png)
 
 ### 字面量推理
 
-![image-20230524145756749](https://cloud.zengweihao.cn/typora/2023-05-24/20230524145758.png)
+![image-20230524145756749](./assets/typora_2023-05-24_20230524145758.png)
 
 ## 函数
 
 ### 函数类型
 
-![image-20230524150707370](https://cloud.zengweihao.cn/typora/2023-05-24/20230524150709.png)
+![image-20230524150707370](./assets/typora_2023-05-24_20230524150709.png)
 
 ### 默认参数
 
@@ -282,19 +282,19 @@ Student类中有自己的属性和方法，并且会继承Person的属性和方�
 
 ### 成员修饰符 `public` `private` `protected`
 
-![image-20230524153456264](https://cloud.zengweihao.cn/typora/2023-05-24/20230524153458.png)
+![image-20230524153456264](./assets/typora_2023-05-24_20230524153458.png)
 
 ### 只读属性 `readonly`
 
-![image-20230524153547023](https://cloud.zengweihao.cn/typora/2023-05-24/20230524153548.png)
+![image-20230524153547023](./assets/typora_2023-05-24_20230524153548.png)
 
 ### getters/setters
 
-![image-20230524153625691](https://cloud.zengweihao.cn/typora/2023-05-24/20230524153627.png)
+![image-20230524153625691](./assets/typora_2023-05-24_20230524153627.png)
 
 ### 静态成员
 
-![image-20230524153849024](https://cloud.zengweihao.cn/typora/2023-05-24/20230524153850.png)
+![image-20230524153849024](./assets/typora_2023-05-24_20230524153850.png)
 
 ## 接口 `interface`
 
@@ -314,35 +314,35 @@ interfacr Point {
 
 ### 只读属性
 
-![image-20230524154349613](https://cloud.zengweihao.cn/typora/2023-05-24/20230524154351.png)
+![image-20230524154349613](./assets/typora_2023-05-24_20230524154351.png)
 
 ### 索引类型
 
 前面我们使用interface来定义对象类型，这个时候其中的属性名、类型、方法都是确定的，但是有时候我们会遇 到类似下面的对象：
 
-![image-20230524154507733](https://cloud.zengweihao.cn/typora/2023-05-24/20230524154509.png)
+![image-20230524154507733](./assets/typora_2023-05-24_20230524154509.png)
 
 ### 接口继承
 
 接口和类一样是可以进行继承的，也是使用extends关键字。
 
-![image-20230524154644734](https://cloud.zengweihao.cn/typora/2023-05-24/20230524154646.png)
+![image-20230524154644734](./assets/typora_2023-05-24_20230524154646.png)
 
 ### 接口的实现
 
-![image-20230524154727443](https://cloud.zengweihao.cn/typora/2023-05-24/20230524154729.png)
+![image-20230524154727443](./assets/typora_2023-05-24_20230524154729.png)
 
 ### interface和type区别
 
-![image-20230526151045839](https://cloud.zengweihao.cn/typora/2023-05-26/20230526151048.png)
+![image-20230526151045839](./assets/typora_2023-05-26_20230526151048.png)
 
 ## 泛型
 
-![image-20230526152015424](https://cloud.zengweihao.cn/typora/2023-05-26/20230526152017.png)
+![image-20230526152015424](./assets/typora_2023-05-26_20230526152017.png)
 
-![image-20230526152027826](https://cloud.zengweihao.cn/typora/2023-05-26/20230526152029.png)
+![image-20230526152027826](./assets/typora_2023-05-26_20230526152029.png)
 
-![image-20230526152047891](https://cloud.zengweihao.cn/typora/2023-05-26/20230526152049.png)
+![image-20230526152047891](./assets/typora_2023-05-26_20230526152049.png)
 
 ## 声明
 
