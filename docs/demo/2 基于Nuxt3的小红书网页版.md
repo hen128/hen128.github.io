@@ -10,17 +10,17 @@
 
 特点：全栈项目，利用Nuxt3写服务接口，接口代码在`server`目录下，这是Nuxt的约定策略。
 
-![image-20230709221236878](https://cloud.zengweihao.cn/typora/2023-07-09/20230709221237.png)
+![image-20230709221236878](./assets/typora_2023-07-09_20230709221237.png)
 
 ## 预览
 
 首页：
 
-![image-20230709215424227](https://cloud.zengweihao.cn/typora/2023-07-09/20230709215424.png)
+![image-20230709215424227](./assets/typora_2023-07-09_20230709215424.png)
 
 登录：
 
-![image-20230709215631826](https://cloud.zengweihao.cn/typora/2023-07-09/20230709215632.png)
+![image-20230709215631826](./assets/typora_2023-07-09_20230709215632.png)
 
 ## 初始化项目
 

@@ -5,4 +5,4 @@
 
 ## 图片预览 
 
-![Screenshot 2023-07-11 at 16-39-03 深圳富邦恒安商业服务有限公司](https://cloud.zengweihao.cn/typora/2023-07-11/20230711163932.png)
+![Screenshot 2023-07-11 at 16-39-03 深圳富邦恒安商业服务有限公司](./assets/typora_2023-07-11_20230711163932.png)
